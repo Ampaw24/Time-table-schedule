@@ -1,0 +1,40 @@
+.main-content{
+
+    padding: 7%;
+    
+   
+}
+.logo{
+    margin: 0 auto;
+    text-align: center;
+ }
+.wrapper{
+   border-radius: 10px;
+    width: 500px;
+    height: 300px;
+   box-shadow: 2px 2px 4px rgb(87, 86, 86);
+    padding: 1%;
+    margin: 0 auto;
+
+  
+ 
+}
+
+
+input{
+    width: 300px;
+    
+}
+.form-control{
+    width: 400px;
+    margin:0 auto ;
+}
+label{
+    margin-left: 50px;
+}
+.lg-btn{
+    margin-left:95px ;
+    font-size: large;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}

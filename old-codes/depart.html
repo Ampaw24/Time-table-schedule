@@ -1,0 +1,62 @@
+<?php
+include 'config.php';
+include 'header.php';
+?>
+<body>
+  <?php include 'topbar.php'; ?>  
+  <div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+        <p class="display-3" style="margin-left: 50px;">Department</p>
+        <div style="position: absolute; left: 75%; bottom: 50%;">
+        <a href="departmentform.php"> <button class="btn btn-success" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-square-o"></i>  Add Department</button></a>
+        <a href="welcome.php"><button class="btn btn-warning"><i class="fa fa-backward"></i> Back</button></a>
+        </div>
+        <div style="margin-left: 90%; position: absolute; bottom: 110%;">
+        <a href="logout.php"><button class="btn btn-outline-primary" style="color: white;"><i class="fa fa-pencil-square-o mr-2"></i>Logout</button></a> 
+        </div>
+        </div>
+       
+            </div>
+   
+  </div>
+  <div class="row">
+    <div class="col-md-10" style="margin-left: 9.5%;">
+        <table class="table table-bordered">
+     <thead>
+      <tr class="active">
+        <td>Id</td>
+        <td>Department Code</td>
+        <td>Department Name</td>
+        <td>Courses</td>
+        <td>Faculty</td>
+        <td>Actions</td>
+      </tr>
+     </thead>
+     <tbody>
+      <?php
+      $sql = 'SELECT * FROM departments';
+      $query = mysqli_query($conn,$sql);
+      
+      while ($row= mysqli_fetch_array($query)) {
+    ?>
+     <tr >
+     <td><?php echo $row['id']?></td>
+     <td><?php echo $row['department_code']?></td>
+     <td><?php echo $row['department_name']?></td>
+     <td><?php echo $row['courses']?></td>
+     <td><?php echo $row['faculty']?></td>
+     <td>
+      <button class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button>
+      <button class="btn btn-success"><i class="fa fa-pencil-square-o"></i> Update</button>
+      
+    </td>
+     </tr>
+     <?php }?>
+     </tbody>
+
+
+        </table>
+    </div>
+  </div>
+</body>
